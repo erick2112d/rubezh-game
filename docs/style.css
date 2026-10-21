@@ -1,0 +1,102 @@
+:root {
+  --bg: #0b1633;
+  --bg2: #12224a;
+  --card: #18295a;
+  --line: #2a3f7a;
+  --text: #e8eeff;
+  --muted: #a9b8e0;
+  --gold: #ffd25a;
+  --green: #4fd36b;
+  --blue: #3b8cff;
+  --red: #e5483f;
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: radial-gradient(1200px 600px at 50% -10%, #1d3a86 0%, transparent 60%), var(--bg);
+  color: var(--text);
+  font: 17px/1.6 "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+a { color: #8fc0ff; }
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+/* шапка */
+header.top {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(11, 22, 51, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+header.top .wrap { display: flex; align-items: center; gap: 16px; min-height: 60px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 800; font-size: 22px; letter-spacing: 1px; }
+.brand img { width: 36px; height: 36px; border-radius: 9px; }
+nav { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-left: auto; }
+nav a { color: var(--muted); text-decoration: none; font-size: 15px; }
+nav a:hover { color: var(--text); }
+
+/* первый экран */
+.hero { padding: 56px 0 40px; text-align: center; }
+.hero img.icon { width: 140px; height: 140px; border-radius: 30px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); }
+.hero h1 { font-size: 56px; margin: 18px 0 6px; letter-spacing: 3px; color: var(--gold); text-shadow: 0 4px 0 #7a4c00; }
+.hero p.lead { font-size: 20px; color: var(--muted); max-width: 720px; margin: 0 auto 26px; }
+.buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-block; padding: 14px 26px; border-radius: 12px; font-weight: 700; text-decoration: none;
+  color: #fff; background: var(--green); box-shadow: 0 4px 0 #2a8a3f;
+}
+.btn.blue { background: var(--blue); box-shadow: 0 4px 0 #1f5bb3; }
+.btn:hover { filter: brightness(1.08); }
+.note { color: var(--muted); font-size: 14px; margin-top: 12px; }
+
+section { padding: 44px 0; border-top: 1px solid rgba(42, 63, 122, 0.5); }
+h2 { font-size: 32px; margin: 0 0 18px; color: var(--gold); }
+h3 { margin: 0 0 8px; }
+
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+.card p { margin: 0; color: var(--muted); }
+
+.shots { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.shots figure { margin: 0; }
+.shots img { width: 100%; border-radius: 12px; border: 1px solid var(--line); display: block; }
+.shots figcaption { color: var(--muted); font-size: 14px; margin-top: 6px; }
+
+/* цены */
+table.prices { width: 100%; border-collapse: collapse; background: var(--card); border-radius: var(--radius); overflow: hidden; }
+table.prices th, table.prices td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+table.prices th { background: var(--bg2); color: var(--muted); font-weight: 600; font-size: 15px; }
+table.prices td.price { color: var(--gold); font-weight: 800; white-space: nowrap; }
+table.prices tr:last-child td { border-bottom: 0; }
+.table-scroll { overflow-x: auto; }
+
+/* текстовые страницы */
+.doc { max-width: 860px; }
+.doc h1 { color: var(--gold); font-size: 34px; margin: 36px 0 6px; }
+.doc h2 { font-size: 22px; margin: 28px 0 8px; color: var(--text); }
+.doc p, .doc li { color: #d3dcf5; }
+.doc .date { color: var(--muted); }
+
+/* данные продавца, которые нужно заполнить */
+.fill { background: rgba(255, 210, 90, 0.18); color: var(--gold); border-radius: 4px; padding: 0 4px; }
+
+dl.req { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; margin: 0; }
+dl.req dt { color: var(--muted); }
+dl.req dd { margin: 0; }
+
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+
+@media (max-width: 640px) {
+  .hero h1 { font-size: 42px; }
+  h2 { font-size: 26px; }
+  nav { margin-left: 0; }
+  dl.req { grid-template-columns: 1fr; }
+  dl.req dt { margin-top: 8px; }
+}
