@@ -54,6 +54,20 @@ nav a:hover { color: var(--text); }
 .btn.blue { background: var(--blue); box-shadow: 0 4px 0 #1f5bb3; }
 .btn:hover { filter: brightness(1.08); }
 .note { color: var(--muted); font-size: 14px; margin-top: 12px; }
+.download-option { min-width: 235px; }
+.download-count, .card p.download-count { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
+.download-count strong { color: var(--gold); font-variant-numeric: tabular-nums; }
+.text-button { padding: 0; border: 0; background: none; color: #8fc0ff; font: inherit; text-decoration: underline; cursor: pointer; }
+.analytics-consent {
+  position: fixed; z-index: 30; bottom: 16px; left: 16px; right: 16px; max-width: 850px;
+  margin: 0 auto; padding: 18px 20px; border: 1px solid var(--line); border-radius: 16px;
+  background: #12224a; box-shadow: 0 8px 40px #0008; font-size: 14px;
+}
+.analytics-consent[hidden] { display: none; }
+.analytics-consent p { margin: 0 0 12px; }
+.analytics-consent .consent-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.analytics-consent button { border: 1px solid var(--line); border-radius: 9px; padding: 9px 14px; font: inherit; cursor: pointer; color: var(--text); background: var(--card); }
+.analytics-consent button[data-choice="accepted"] { color: #082518; background: var(--green); font-weight: 700; }
 
 section { padding: 44px 0; border-top: 1px solid rgba(42, 63, 122, 0.5); }
 h2 { font-size: 32px; margin: 0 0 18px; color: var(--gold); }

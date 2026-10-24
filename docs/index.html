@@ -7,6 +7,8 @@
   <meta name="description" content="РУБЕЖ — бесплатная стратегия: стройте здания, ведите войска по линии и разрушьте вражеский кристалл. Для Windows и Android.">
   <link rel="icon" href="img/icon.png">
   <link rel="stylesheet" href="style.css">
+  <script defer src="analytics.js"></script>
+  <script defer src="downloads.js"></script>
 </head>
 <body>
 <header class="top">
@@ -31,8 +33,14 @@
     <p class="lead">Стратегия на одной линии: стройте казармы и башни, ведите войска вперёд, применяйте заклинания
       и героя — и разрушьте вражеский кристалл раньше, чем враг разрушит ваш.</p>
     <div class="buttons">
-      <a class="btn" href="https://github.com/erick2112d/rubezh-game/releases/latest/download/Rubezh_Windows.zip">Скачать для Windows</a>
-      <a class="btn blue" href="https://github.com/erick2112d/rubezh-game/releases/latest/download/Rubezh.apk">Скачать для Android</a>
+      <div class="download-option">
+        <a class="btn" data-download-platform="windows" data-button-location="hero" href="https://github.com/erick2112d/rubezh-game/releases/latest/download/Rubezh_Windows.zip">Скачать для Windows</a>
+        <p class="download-count" data-download-count="windows" aria-live="polite">Всего скачиваний: <strong>—</strong></p>
+      </div>
+      <div class="download-option">
+        <a class="btn blue" data-download-platform="android" data-button-location="hero" href="https://github.com/erick2112d/rubezh-game/releases/latest/download/Rubezh.apk">Скачать для Android</a>
+        <p class="download-count" data-download-count="android" aria-live="polite">Всего скачиваний: <strong>—</strong></p>
+      </div>
     </div>
     <p class="note">Игра бесплатная. Внутриигровые покупки — по желанию.</p>
   </div>
@@ -100,16 +108,19 @@
         <div class="card">
           <h3>Windows</h3>
           <p>Windows 10 или 11, 64-бит. Скачайте архив, распакуйте в любую папку и запустите LaneWars.exe.</p>
-          <p style="margin-top:12px"><a class="btn" href="https://github.com/erick2112d/rubezh-game/releases/latest/download/Rubezh_Windows.zip">Rubezh_Windows.zip</a></p>
+          <p style="margin-top:12px"><a class="btn" data-download-platform="windows" data-button-location="download" href="https://github.com/erick2112d/rubezh-game/releases/latest/download/Rubezh_Windows.zip">Rubezh_Windows.zip</a></p>
+          <p class="download-count" data-download-count="windows" aria-live="polite">Всего скачиваний: <strong>—</strong></p>
         </div>
         <div class="card">
           <h3>Android</h3>
           <p>Android 8.0 и новее. Скачайте файл и откройте его; при первой установке разрешите установку из этого источника.</p>
-          <p style="margin-top:12px"><a class="btn blue" href="https://github.com/erick2112d/rubezh-game/releases/latest/download/Rubezh.apk">Rubezh.apk</a></p>
+          <p style="margin-top:12px"><a class="btn blue" data-download-platform="android" data-button-location="download" href="https://github.com/erick2112d/rubezh-game/releases/latest/download/Rubezh.apk">Rubezh.apk</a></p>
+          <p class="download-count" data-download-count="android" aria-live="polite">Всего скачиваний: <strong>—</strong></p>
         </div>
       </div>
       <p class="note">Игра обновляется сама: при запуске она предложит новую версию.
         Все версии — на <a href="https://github.com/erick2112d/rubezh-game/releases">странице выпусков</a>.</p>
+      <p class="note">Скачивания — по данным GitHub за все версии, включая обновления и повторные загрузки. Счётчики обновляются с задержкой.</p>
     </div>
   </section>
 
@@ -139,6 +150,8 @@
     <a href="offer.html">Публичная оферта</a>
     <a href="refund.html">Возврат</a>
     <a href="#contacts">Контакты</a>
+    <a href="privacy.html">Конфиденциальность</a>
+    <button class="text-button" type="button" data-analytics-settings>Настройки аналитики</button>
     <span>Оплата — через сервис ЮKassa</span>
   </div>
 </footer>
