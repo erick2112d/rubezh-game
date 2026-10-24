@@ -7,6 +7,7 @@
   const FILES = { 'Rubezh.apk': 'android', 'Rubezh_Windows.zip': 'windows' };
   const nodes = document.querySelectorAll('[data-download-count]');
   if (!nodes.length) return;
+  let newest = 0;
 
   function valid(data) {
     return data && Number.isFinite(Date.parse(data.updated_at)) &&
@@ -14,6 +15,9 @@
   }
   function render(data) {
     if (!valid(data)) return;
+    const timestamp = Date.parse(data.updated_at);
+    if (timestamp < newest) return;
+    newest = timestamp;
     const date = new Date(data.updated_at).toLocaleString('ru-RU');
     nodes.forEach(node => {
       node.querySelector('strong').textContent = data[node.dataset.downloadCount].toLocaleString('ru-RU');

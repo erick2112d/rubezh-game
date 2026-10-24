@@ -63,7 +63,7 @@
     const link = event.target.closest('a[data-download-platform]');
     if (!link || !enabled || window['ga-disable-' + ID]) return;
     window.gtag('event', 'download_click', {
-      platform: link.dataset.downloadPlatform,
+      download_platform: link.dataset.downloadPlatform,
       button_location: link.dataset.buttonLocation,
       link_url: link.href,
       file_name: link.href.split('/').pop(),
